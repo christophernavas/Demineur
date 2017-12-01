@@ -1,0 +1,72 @@
+@import "variables.scss";
+
+
+
+body {
+    padding-top: 5rem;
+}
+
+.container {
+    text-align: center;
+
+    .starter-template {
+        padding: 0.3rem 1.5rem;
+    }
+    .demineur {
+        border: 1px solid black;
+        width: $widthDemineur + px;
+        height: $heightDemineur + px;
+        margin: auto;
+    }
+    .ligne {
+        display: flex;
+    }
+    .ligne > div {
+        height: 16px;
+        width: 16px;
+        position: relative;
+    }
+    .case {
+        background-image: url(../img/blank.gif);
+        position: absolute !important;
+    }
+    .open {
+        background-image: url(../img/open0.gif);
+    }
+    .open1 {
+        background-image: url(../img/open1.gif);
+    }
+    .open2 {
+        background-image: url(../img/open2.gif);
+    }
+    .open3 {
+        background-image: url(../img/open3.gif);
+    }
+    .open4 {
+        background-image: url(../img/open4.gif);
+    }
+    .open5 {
+        background-image: url(../img/open5.gif);
+    }
+    .open6 {
+        background-image: url(../img/open6.gif);
+    }
+    .open7 {
+        background-image: url(../img/open7.gif);
+    }
+    .open8 {
+        background-image: url(../img/open8.gif);
+    }
+    .flag {
+        background-image: url(../img/bombflagged.gif);
+    }
+    .question {
+        background-image: url(../img/bombquestion.gif);
+    }
+    .mine {
+        background-image: url(../img/bombrevealed.gif);
+    }
+    .dead{
+        background-image: url(../img/bombdeath.gif);
+    }
+}
