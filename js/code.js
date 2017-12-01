@@ -1,13 +1,14 @@
 //Code
 //$(function () {
 //10 ligne * 10 case
-$('.demineur').load("code.js", genererGrille(10, 10),remplirGrille());
+$('.demineurCacher').load("code.js", genererGrille(10, 10),remplirGrille());
+$('.demineurRempli').load("code.js", genererGrille2(10, 10));
 
 //Fonction qui genere une grille 
 function genererGrille(ligne, col) {
     for (let j = 1; j <= ligne; j++) {
         $newLigne = $('<div class="ligne">');
-        $('.demineur').append($newLigne);
+        $('.demineurCacher').append($newLigne);
     }
 
     for (let i = 1; i <= col; i++) {
@@ -16,12 +17,24 @@ function genererGrille(ligne, col) {
     }
 }
 
+function genererGrille2(ligne, col) {
+    for (let j = 1; j <= ligne; j++) {
+        $newLigne = $('<div class="ligne">');
+        $('.demineurRempli').append($newLigne);
+    }
+
+    for (let i = 1; i <= col; i++) {
+        $newCase = $('<div class="case dem"></div>');
+        $('.demineurRempli > .ligne').append($newCase);
+    }
+}
+
 //Fonction qui récupére les cordonnée d'une case
 function getPosition(x, y) {
     //    x = x - 1;
     //    y = y - 1;
 
-    return document.getElementsByClassName("demineur")[0].getElementsByClassName("ligne")[x].getElementsByClassName("dem")[y];
+    return document.getElementsByClassName("demineurCacher")[0].getElementsByClassName("ligne")[x].getElementsByClassName("dem")[y];
 }
 
 // Fonction qui return un nombre aléatoire et qui permettra de placer les bombes
@@ -126,13 +139,6 @@ function genererGrilleCacher(ligne, col, mine) {
     return grille;
 }
 
-
-/*
- *
- *   EVENEMENT
- *
- */
-
 //Rempli la grille résolu
 function remplirGrille() {
     let grille = genererGrilleCacher(10, 10, 7);
@@ -180,24 +186,36 @@ function remplirGrille() {
             if (grille[i][j] === 9) //La mine 
             {
                 getPosition(i, j).setAttribute("class", "mine dem");
+
             }
         }
     }
 
 }
 
+/*
+ *
+ *   EVENEMENT
+ *
+ */
+
+
+
 
 //Evenement sur le clic d'une case
 $('.case').on("click", function () {
-    if (this.className === 'case') {
-        this.className = "open";
-    }
+    if (this.className === 'case dem') {
+        this.className = "";
+    }    
+});
 
+$('.mine').click(function(){
+    alert("PERDU");
 });
 
 
 //Evenement pour enlever le contextNavigateur
-$('.demineur').on('contextmenu', function (e) {
+$('.demineurRempli').on('contextmenu', function (e) {
     e.preventDefault();
     return false;
 });
@@ -205,12 +223,12 @@ $('.demineur').on('contextmenu', function (e) {
 //Evenement sur le clickDroit d'une case
 $('.case').on("contextmenu", function () {
 
-    if (this.className === "case") {
+    if (this.className === "case dem") {
         this.className = "flag";
     } else if (this.className === "flag") {
         this.className = "question";
     } else if (this.className === "question") {
-        this.className = "case";
+        this.className = "case dem";
     }
 });
 

@@ -12,23 +12,35 @@ body {
     .starter-template {
         padding: 0.3rem 1.5rem;
     }
-    .demineur {
-        border: 1px solid black;
+    .demineurCacher {
         width: $widthDemineur + px;
         height: $heightDemineur + px;
         margin: auto;
     }
+    .demineurRempli {
+        border: 1px solid black;
+        width: $widthDemineur + px;
+        height: $heightDemineur + px;
+        margin: auto;
+        top: 0;
+        position: absolute;
+    }
+
+    .demineur {
+        position: relative;
+        width: $widthDemineur + px;
+        margin: auto;
+    }
+
     .ligne {
         display: flex;
     }
     .ligne > div {
         height: 16px;
         width: 16px;
-        position: relative;
     }
     .case {
         background-image: url(../img/blank.gif);
-        position: absolute !important;
     }
     .open {
         background-image: url(../img/open0.gif);
@@ -65,8 +77,9 @@ body {
     }
     .mine {
         background-image: url(../img/bombrevealed.gif);
+//        z-index: 1;
     }
-    .dead{
+    .dead {
         background-image: url(../img/bombdeath.gif);
     }
 }

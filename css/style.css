@@ -1,0 +1,57 @@
+body {
+  padding-top: 5rem; }
+
+.container {
+  text-align: center; }
+  .container .starter-template {
+    padding: 0.3rem 1.5rem; }
+  .container .demineurCacher {
+    width: 160px;
+    height: 160px;
+    margin: auto; }
+  .container .demineurRempli {
+    border: 1px solid black;
+    width: 160px;
+    height: 160px;
+    margin: auto;
+    top: 0;
+    position: absolute; }
+  .container .demineur {
+    position: relative;
+    width: 160px;
+    margin: auto; }
+  .container .ligne {
+    display: flex; }
+  .container .ligne > div {
+    height: 16px;
+    width: 16px; }
+  .container .case {
+    background-image: url(../img/blank.gif); }
+  .container .open {
+    background-image: url(../img/open0.gif); }
+  .container .open1 {
+    background-image: url(../img/open1.gif); }
+  .container .open2 {
+    background-image: url(../img/open2.gif); }
+  .container .open3 {
+    background-image: url(../img/open3.gif); }
+  .container .open4 {
+    background-image: url(../img/open4.gif); }
+  .container .open5 {
+    background-image: url(../img/open5.gif); }
+  .container .open6 {
+    background-image: url(../img/open6.gif); }
+  .container .open7 {
+    background-image: url(../img/open7.gif); }
+  .container .open8 {
+    background-image: url(../img/open8.gif); }
+  .container .flag {
+    background-image: url(../img/bombflagged.gif); }
+  .container .question {
+    background-image: url(../img/bombquestion.gif); }
+  .container .mine {
+    background-image: url(../img/bombrevealed.gif); }
+  .container .dead {
+    background-image: url(../img/bombdeath.gif); }
+
+/*# sourceMappingURL=style.css.map */
