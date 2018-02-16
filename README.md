@@ -1,2 +1,2 @@
 # Demineur
-Jeu de démineur
+Jeu de démineur écrit en javascript.
